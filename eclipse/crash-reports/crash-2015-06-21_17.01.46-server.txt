@@ -1,0 +1,55 @@
+---- Minecraft Crash Report ----
+// I blame Dinnerbone.
+
+Time: 21/06/15 17:01
+Description: Exception in server tick loop
+
+java.lang.NoClassDefFoundError: net/minecraft/world/World$2
+	at net.minecraft.world.World.notifyBlockOfNeighborChange(World.java:782)
+	at net.minecraft.world.World.notifyBlocksOfNeighborChange(World.java:714)
+	at net.minecraft.world.World.notifyBlockChange(World.java:675)
+	at net.minecraft.world.World.setBlockMetadataWithNotify(World.java:606)
+	at com.camerpon900.realauto2.blocks.BlockWindmillGround.isMultiBlockStructure(BlockWindmillGround.java:75)
+	at com.camerpon900.realauto2.blocks.BlockWindmillGround.updateTheBlockStructure(BlockWindmillGround.java:41)
+	at com.camerpon900.realauto2.blocks.BlockWindmillGround.onBlockAdded(BlockWindmillGround.java:37)
+	at net.minecraft.world.chunk.Chunk.func_150807_a(Chunk.java:705)
+	at net.minecraft.world.World.setBlock(World.java:511)
+	at net.minecraft.item.ItemBlock.placeBlockAt(ItemBlock.java:232)
+	at net.minecraft.item.ItemBlock.onItemUse(ItemBlock.java:116)
+	at net.minecraft.item.ItemStack.tryPlaceItemIntoWorld(ItemStack.java:140)
+	at net.minecraft.server.management.ItemInWorldManager.activateBlockOrUseItem(ItemInWorldManager.java:418)
+	at net.minecraft.network.NetHandlerPlayServer.processPlayerBlockPlacement(NetHandlerPlayServer.java:588)
+	at net.minecraft.network.play.client.C08PacketPlayerBlockPlacement.processPacket(C08PacketPlayerBlockPlacement.java:74)
+	at net.minecraft.network.play.client.C08PacketPlayerBlockPlacement.processPacket(C08PacketPlayerBlockPlacement.java:122)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:226)
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:182)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:710)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:598)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:472)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:736)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.2
+	Operating System: Windows 8.1 (amd64) version 6.3
+	Java Version: 1.7.0_79, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 862225728 bytes (822 MB) / 1056309248 bytes (1007 MB) up to 1056309248 bytes (1007 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 3470 (194320 bytes; 0 MB) allocated, 3054 (171024 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP v9.03 FML v7.2.207.1110 Minecraft Forge 10.12.1.1110 4 mods loaded, 4 mods active
+	mcp{9.03} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	FML{7.2.207.1110} [Forge Mod Loader] (forgeSrc-1.7.2-10.12.1.1110.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Forge{10.12.1.1110} [Minecraft Forge] (forgeSrc-1.7.2-10.12.1.1110.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	realauto2{1.7.2-10} [RealAuto 2] (RealAuto2) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 1192 (66752 bytes; 0 MB) allocated, 904 (50624 bytes; 0 MB) used
+	Player Count: 1 / 8; [EntityPlayerMP['Player437'/2382, l='New World', x=-147.32, y=72.00, z=248.87]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
